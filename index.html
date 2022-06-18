@@ -46,14 +46,22 @@
         const secondChild = document.querySelector('.child:nth-child(2)');
         const thirdChild = document.querySelector('.child:nth-child(3)');
 
-        window.addEventListener('resize', onResize)
+        outputWidth();
 
-        function onResize() {
+        function outputWidth() {
             containerWidth.textContent = container.offsetWidth;
             firstChild.textContent = firstChild.offsetWidth;
             secondChild.textContent = secondChild.offsetWidth;
             thirdChild.textContent = thirdChild.offsetWidth;
         }
+
+        window.addEventListener('resize', outputWidth);
+
+        // function removeEventListeners() {
+        //     window.removeEventListener('resize', outputWidth)
+        // }
+
+        // window.addEventListener('beforeunload', removeEventListeners)
     </script>
 </body>
 </html>
